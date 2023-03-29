@@ -19,17 +19,10 @@ public class App {
         String body = response.body();
 
         // Extrair só os dados que interessam (titulo, poster, classificação)
-
         var parser = new JsonParser();
-
-        // Vai ser usado uma lista em vez de um Array
-        //Map é um dicionario que associa uma chave com um valor
-        // Agora dentro de Map informar que tipo. Que é txto 'String'
         List<Map<String, String>> listaDeFilmes = parser.parse(body);
 
         // Exibir e manipular os dados
-
-        // Criando um for para trazer todos os elementos da lista
         for (Map<String,String> filme : listaDeFilmes) {
             System.out.println(filme.get("title"));
             System.out.println(filme.get("image"));
